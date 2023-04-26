@@ -120,7 +120,7 @@ section
     background-color: rgba(234, 220, 186, 1);
     padding-bottom: 50px;
 }
-.about.us, .delivery.content
+.about.us, .delivery.content, .shopingbag.box
 {
     display: grid;
     width: 100%;
@@ -160,6 +160,7 @@ line-height: 100%;
 }
 .box
 {
+    margin: auto;
     width: 250px;
     padding: 1rem;
     border-radius: .5rem;
@@ -230,6 +231,11 @@ line-height: 100%;
     align-items: center;
     background-color: rgba(234, 220, 186, 1);
 }
+.delivery.box
+{
+    margin: auto;
+    height: 228px;
+}
 .review.cont
 {
     display: grid;
@@ -247,7 +253,6 @@ line-height: 100%;
     font-weight: 400;
     font-size: 30px;
     line-height: 120%;
-    width: 1100px;
     color: #000000;
 }
 .name.author
@@ -308,6 +313,12 @@ footer a
    font-size: 25px;
    background-color: transparent;
 }
+.fa-solid.fa-xmark
+{
+    margin: auto;
+    font-size: 25px;
+   background-color: transparent;
+}
 .links.container
 {
     display: flex;
@@ -341,7 +352,7 @@ footer a
     align-items: center;
 
 }
-.about.page, .delivery.page
+.about.page, .delivery.page, .shoppingbag.page
 {
     display: grid;
     width: 100%;
@@ -377,8 +388,15 @@ color: #000000;
     align-items: center;
     background-color: rgba(234, 220, 186, 1);
 }
+
 .contact.page, .catalog.page, .product.page
 {
+    padding: 5rem 9%;
+    background-color: rgba(234, 220, 186, 1);
+}
+.shoppingbag.page
+{
+    display: flex;
     padding: 5rem 9%;
     background-color: rgba(234, 220, 186, 1);
 }
@@ -455,6 +473,84 @@ color: #000000;
     background-color: black;
     color: white;
 }
+.card.image
+{
+    width: 216px;
+    height: 233px;
+}
+.product.info
+{
+    text-align: center;
+}
+.row.additional
+{
+    margin-top: 10px;
+}
+.col.price
+{
+    text-align: end;
+}
+.txt.price
+{
+    vertical-align: middle;
+}
+.copyright
+{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+     line-height: 120%;
+     text-align: center;
+    color: #000000;
+    margin-top: 20px;
+}
+.shoppbag.box
+{
+    display: flex;
+    width: auto;
+}
+.bag.name.product
+{
+    margin: auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    width: 300px;
+    font-size: 23px;
+    line-height: 120%;
+}
+.product.price
+{
+    width: 124px;
+height: 44px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 27px;
+line-height: 120%;
+
+
+
+color: #000000;
+}
+.product.price.bag
+{
+    width: 124px;
+height: auto;
+margin: auto;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 27px;
+line-height: 120%;
+color: #000000;
+}
+.bag.content
+{
+    display: flex;
+    padding-right: 100px;
+}
 @media (max-width:991px)
 {
     header
@@ -467,6 +563,7 @@ color: #000000;
     .fa-solid.fa-bars
     {
         display: block;
+        padding: 0;
     }
     .navbar
     {
@@ -489,15 +586,38 @@ color: #000000;
         background: #fff;
         border: .1rem solid black;
     }
+    .header.section
+    {
+        padding: 0;
+    }
     .content
     {
         padding-top: 5rem;
     }
-    .home, .about.about.us, .box-container, .icons.advan, .del.pay.contain, .review.cont, .name.author, .contact.cont, .delivery.content
+    .icons.advan
+    {
+        grid-template-columns: 1fr;
+        padding: 0;
+    }
+    .delivery.box
+    {
+        height: auto;
+    }
+    .home, .about.about.us, .box-container, .del.pay.contain, .review.cont, .contact.cont, .delivery.content
     {
         grid-template-columns: 1fr;
         padding-top: 5rem;
     }
+    .name.author, .shopingbag.box
+    {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+    }
+    .name.label.review, .div.of.butt
+    {
+        text-align: center;
+    }
+    
     .imgcontent
     {
         text-align: center;
@@ -518,7 +638,9 @@ color: #000000;
     .about.us.txt, .advantage.txt
     {
        width: auto;
+       height: auto;
        font-size: 25px;
+       padding: 0;
     }
     .name.input, .review.input
     {
@@ -527,6 +649,7 @@ color: #000000;
     .review.header
     {
         font-size: 25px;
+        text-align: center;
     }
     .btn.main.section
     {
@@ -534,8 +657,8 @@ color: #000000;
     }
     .about.header.txt, .delivery.header.txt
     {
-    width: 320px;
-
+    width: 310px;
+    text-align: center;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -544,7 +667,7 @@ color: #000000;
    }
    .aboutimg, .deliveryimg
    {
-     width: 320px;
+     width: 310px;
    }
    .col-xs-10.col-sm-2.filter
    {
@@ -554,5 +677,47 @@ color: #000000;
    {
        width: 310px;
        margin-bottom: 20px;
+   }
+   .links.container
+   {
+    padding: 0;
+    text-align: center;
+   }
+   .elem
+   {
+      flex: 9.5rem;
+      
+   }
+   .social.net
+   {
+      display: block;
+   }
+   .catalog.card
+   {
+      margin-bottom: 20px;
+   }
+   .row.photo
+   {
+    text-align: center;
+   }
+   .bag.content
+   {
+    display: grid;
+    padding: 0;
+   }
+   .bag.name.product
+   {
+    width: auto;
+   }
+   .product.price.bag
+   {
+    width: auto;
+    text-align: center;
+   }
+   .count.prod
+   {
+      text-align: center;
+      width: 50px;
+      margin-top: 20px;
    }
 }
