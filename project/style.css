@@ -236,7 +236,7 @@ line-height: 100%;
     margin: auto;
     height: 228px;
 }
-.review.cont
+.swiper.mySwiper.review.cont
 {
     display: grid;
     width: 100%;
@@ -245,7 +245,12 @@ line-height: 100%;
     gap: 2rem;
     align-items: center;
     background-color: rgba(234, 220, 186, 1);
+    transition: all 1s ease-in-out;
+   
 }
+
+  
+
 .review.header
 {
     font-family: 'Inter';
@@ -368,15 +373,12 @@ footer a
 .page.name
 {
     font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 23px;
-line-height: 120%;
-padding: 12px;
-/* or 28px */
-
-
-color: #000000;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 120%;
+    padding: 12px;
+    color: #000000;
 }
 .contact.cont
 {
@@ -429,9 +431,7 @@ color: #000000;
   input[type=range] {
     -webkit-appearance: none;
     background: transparent; 
-    position: absolute;
-    width: 250px;
-    left: 0;
+
   }
   
   input[type=range]::-webkit-slider-thumb {
@@ -551,6 +551,33 @@ color: #000000;
     display: flex;
     padding-right: 100px;
 }
+.catalog.card
+{
+    height: auto;
+    width: 160px;
+}
+.swiper-button-next, .swiper-button-prev{
+    opacity: 0.7;
+    color: #7d2ae8;
+    transition: all 0.3s ease;
+  }
+  .swiper-button-next:hover, .swiper-button-prev:hover{
+    opacity: 1;
+    color: #7d2ae8;
+  }
+  .swiper{
+    width: 950px;
+  }
+  .main.prod.det
+  {
+    width: 400px;
+    height: 400px;
+  }
+  .btn.volume:focus
+  {
+    background-color: black;
+    color: white;
+  }
 @media (max-width:991px)
 {
     header
@@ -657,21 +684,21 @@ color: #000000;
     }
     .about.header.txt, .delivery.header.txt
     {
-    width: 310px;
-    text-align: center;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 120%;
+        width: 310px;
+        text-align: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
    }
    .aboutimg, .deliveryimg
    {
-     width: 310px;
+        width: 310px;
    }
    .col-xs-10.col-sm-2.filter
    {
-      padding-bottom: 30px;
+        padding-bottom: 30px;
    }
    .main.prod.det
    {
@@ -680,8 +707,8 @@ color: #000000;
    }
    .links.container
    {
-    padding: 0;
-    text-align: center;
+       padding: 0;
+       text-align: center;
    }
    .elem
    {
@@ -698,21 +725,21 @@ color: #000000;
    }
    .row.photo
    {
-    text-align: center;
+      text-align: center;
    }
    .bag.content
    {
-    display: grid;
-    padding: 0;
+       display: grid;
+       padding: 0;
    }
    .bag.name.product
    {
-    width: auto;
+       width: auto;
    }
    .product.price.bag
    {
-    width: auto;
-    text-align: center;
+       width: auto;
+       text-align: center;
    }
    .count.prod
    {

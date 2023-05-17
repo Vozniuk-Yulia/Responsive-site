@@ -24,7 +24,7 @@
         </nav>
         <div class="icons">
             <a href="shoppingbag.html" class="fa-solid fa-bag-shopping"></a>
-            <span class="count goods">1</span>
+            <span id="goodsCount" class="count goods"></span>
         </div>
     </header>
     <section class="catalog page">
@@ -36,8 +36,9 @@
                 <div class="col-xs-10 col-sm-2 filter">
                     <h3 class="filter txt">Фільтри</h3>
                     <hr>
-                    <aside>
-                        <h5 class="name of filter">Виробник</h5>
+                    <h5 class="name of filter">Виробник</h5>
+                    <aside class="producerfilter">
+                       
                         <label class="container">
                             <span class="checkmark"></span>
                             <input type="checkbox" >
@@ -65,21 +66,22 @@
                         </label>
                     </aside>
                     <br>
-                    <aside>
-                        <h5 class="name of filter">Об’єм</h5>
+                    <h5 class="name of filter">Об’єм</h5>
+                    <aside class="volumefilter">
+                        
                         <label class="container">
                             <span class="checkmark"></span>
-                            <input type="radio" >
+                            <input type="radio" name="volumeChoice">
                             30 мл
                         </label>
                         <label class="container">
                             <span class="checkmark"></span>
-                            <input type="radio" >
+                            <input type="radio" name="volumeChoice">
                             50 мл
                         </label>
                         <label class="container">
                             <span class="checkmark"></span>
-                            <input type="radio" >
+                            <input type="radio" name="volumeChoice">
                             100 мл
                         </label>
                     </aside>
@@ -87,89 +89,16 @@
                     <aside>
                         <h5 class="name of filter">Ціна</h5>
                         <div class="price-content">
-                            <div>
-                        
-                              <p id="min-value">50</p>
-                            </div>
-                    
-                            <div>
-                    
-                              <p id="max-value">500</p>
-                            </div>
+                            <input type="range" id="priceRange" />
+                            <span class="priceValue">500</span>
                           </div>
                     
-                            <div class="range-slider">
-                              <input type="range" class="min-price" value="100" min="10" max="500" step="10">
-                              <input type="range" class="max-price" value="250" min="10" max="500" step="10">
-                            </div>
+                           
                     </aside>
                 </div>
                 <div class="col-xs-10 col-sm-8">
                     <div class="row cards">
-                        <div class="col">
-                         <div class="catalog card">
-                             <img class="goods elem" src="images/goodselement.png"></img>
-                             <span class="product info">Chanel Chance</span>
-                             <div class="row additional">
-                                 <div class="col price">
-                                     <span class="txt price">2000</span>
-                                 </div>
-                                 <div class="col">
-                                     <button onclick="window.location.href='product.html';" class="btnwithicon">
-                                         <i class="fa-solid fa-bag-shopping"></i>
-                                     </button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <div class="catalog card">
-                             <img class="goods elem" src="images/goodselement.png"></img>
-                             <span class="product info">Chanel Chance</span>
-                             <div class="row additional">
-                                 <div class="col price">
-                                     <span class="txt price">2000</span>
-                                 </div>
-                                 <div class="col">
-                                     <button class="btnwithicon">
-                                         <i class="fa-solid fa-bag-shopping"></i>
-                                     </button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <div class="catalog card">
-                             <img class="goods elem" src="images/goodselement.png"></img>
-                             <span class="product info">Chanel Chance</span>
-                             <div class="row additional">
-                                 <div class="col price">
-                                     <span class="txt price">2000</span>
-                                 </div>
-                                 <div class="col">
-                                     <button class="btnwithicon">
-                                         <i class="fa-solid fa-bag-shopping"></i>
-                                     </button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                      <div class="col">
-                         <div class="catalog card">
-                             <img class="goods elem" src="images/goodselement.png"></img>
-                             <span class="product info">Chanel Chance</span>
-                             <div class="row additional">
-                                 <div class="col price">
-                                     <span class="txt price">2000</span>
-                                 </div>
-                                 <div class="col">
-                                     <button class="btnwithicon">
-                                         <i class="fa-solid fa-bag-shopping"></i>
-                                     </button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
+                       
              </div>
                 </div>
             </div>
@@ -233,5 +162,8 @@
         </div>
         <h5 class="copyright">©Copyright 2023</h5>
     </footer>
+    <script src="js/script.js"></script>
+    <script src="js/script2.js"></script>
+
 </body>
 </html>
