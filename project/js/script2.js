@@ -102,51 +102,74 @@ if (selectedProduct) {
 //const goodsCountSpan = document.getElementById('goodsCount');
 //let goodsCount = parseInt(localStorage.getItem('goodsCount')) || 0;
 
-const cartView=document.querySelector(".col.bagList");
+const cartView = document.querySelector(".shoppingbag.page .col.bagList");
 function addToCart(choosenProductId)
 {
-   
-   const choosenProduct = data.find((item) => item.id === choosenProductId);
-   const newItem = {
-      productId:choosenProductId,
-     name: choosenProduct.name,
-     img: choosenProduct.img,
-     price:choosenProduct.price,
-      
-    };
 
-    shoppingCart.push(newItem);
-    displayCart(shoppingCart);
-    window.location.href='shoppingbag.html';
+  const choosenProduct = data.find((item) => item.id === choosenProductId);
+  const newItem = {
+
+    productId: choosenProductId,
+    name: choosenProduct.name,
+    img: choosenProduct.img,
+    price: choosenProduct.price,
+    count: 1, 
+  };
+  const shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+  shoppingCart.push(newItem);
+  localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  console.log(shoppingCart);
+  window.location.href='shoppingbag.html';
+  console.log(shoppingCart);
+    
 }
-function displayCart(carts)
-{
+function displayCart(carts) {
+
+  const cartView = document.querySelector(".col.bagList");
 
   if (carts.length > 0) {
-    const review_carts = carts
-      .map(
-        (card) => `
-        <div class="shopingbag box">
-        <div >
-            <img class="bag photo" src="${card.img}">
-        </div>
-        <div class="bag content">
-            <h4 class="bag name product">${card.name}
-            </h4>
-            <p>Кількість:<input onchange="countSum(${card.productId})" class="count prod" id="productsCount" value="1"></p>
-            <span id="totalPrice" class="product price bag">${card.price}₴</span>
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-    </div>
-        `
-      )
-      .join("");
-      cartView.innerHTML = review_carts;
+     const review_carts = carts
+        .map(
+           (card) => `
+           <div class="shopingbag box">
+              <div>
+                 <img class="bag photo" src="${card.img}">
+              </div>
+              <div class="bag content">
+                 <h4 class="bag name product">${card.name}</h4>
+                 <p>Кількість:<input onchange="countSum(${card.productId})" class="count prod" id="productsCount" value="1"></p>
+                 <span id="totalPrice" class="product price bag">${card.price}₴</span>
+                 <button  onclick="deleteProduct(${card.productId})" class="btnwithicon">
+                 <i class="fa-solid fa-xmark"></i>
+                 </button>
+              </div>
+           </div>
+           `
+        )
+        .join("");
+     cartView.innerHTML = review_carts;
   } else {
-   cartView.innerHTML = "<h3>No Available</h3>";
+     cartView.innerHTML = "<h3>Порожня корзина</h3>";
   }
 }
-displayCart(shoppingCart);
+const shoppingCartUpdate = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+displayCart(shoppingCartUpdate);
+function deleteProduct(productId) {
+  
+  let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || [];
+  const productIndex = shoppingCart.findIndex((item) => item.productId === productId);
+
+  if (productIndex !== -1) {
+   
+    shoppingCart.splice(productIndex, 1);
+
+    
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+
+    displayCart(shoppingCart);
+  }
+}
+
 function countSum(prodId)
 {
    const countInput = document.getElementById('productsCount');
